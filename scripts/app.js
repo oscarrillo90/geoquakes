@@ -1,7 +1,7 @@
 // define globals
 var weekly_quakes_endpoint = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson";
 var map;
-
+var icon = '/Users/oscarcarrillo/wdi/geoquakes/images/earthquake_360.png';
 
 $(document).ready(function() {
   console.log("Let's get coding!");
@@ -21,8 +21,8 @@ function initMap() {
 
   var marker = new google.maps.Marker({
             position: firstQuake,
-            map: map
-
+            map: map,
+            icon: icon
   });
 
 }
@@ -51,8 +51,8 @@ function getQuake(){
       $('#info').append(`<p>${title}<p>`);
       var marker = new google.maps.Marker({
            position: coords,
-                map: map
-                icon: '/Users/oscarcarrillo/wdi/geoquakes/images/earthquake_360.png';
+                map: map,
+                icon: icon
       });
       // TODO:  place a marker on the map where this earthquake occured
     }
